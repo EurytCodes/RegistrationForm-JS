@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: url(img/12.jpg) no-repeat center center/cover;
+}
+
+/*================ TEXT =================*/
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .20);
+}
+h2{
+    font-size: 50px;
+    background-color: orangered;
+    margin-bottom: 10px;
+    color: white;
+}
+h4{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: beige;
+}
+
+
+/*================ JOIN US =================*/
+.open-btn{
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: 3px solid orange;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    transition: .4s;
+}
+.open-btn:hover{
+    color: white;
+    background-color: orange;
+}
+
+.close-btn{
+    top: 15%;
+    left: 70%;
+    position: absolute;
+    border: none;
+    background: transparent;
+    margin: 5px 0px;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    transition: .4s ease;
+}
+
+.registration{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 400px;
+    height: 70%;
+    color: black;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border: 2px solid beige;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    opacity: 1;
+
+    animation-name: animationmodal;
+    animation-duration: .5s;
+}
+
+.registration-container{
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .40);
+}
+
+
+/*================ ANIMATION FOR REGISTRATION =================*/
+
+@keyframes animationmodal{
+    from{
+        top: -100px;
+        opacity: 0;
+    }
+    to{
+        top: 20%;
+        opacity: 1;
+    }
+}
+
+
+
+
+/*================ SIGN UP FORM =================*/
+
+.logres-box{
+    top: 25%;
+    left: 40%;
+    width: 400px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.logres-box .form-box{
+    width: 400px;
+    height: 70vh;
+    padding: 20px 15px;
+    background-color: rgba(0, 0, 0, .40);
+    border-radius: 5px;
+}
+.form-box h1{
+    font-size: 35px;
+    text-align: center;
+    font-family: Arial;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: orange;
+}
+.form-box .input-box{
+    position: relative;
+    border-bottom: 2px solid orange;
+    margin: 30px 0px;
+    padding: 5px 0px;
+}
+.input-box input{
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Arial;
+    color: beige;
+    padding-right: 10px;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 19px;
+    font-weight: 600;
+    font-family: Arial;
+    transition: .3s ease;
+    color: white;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+    color: orange;
+}
+.btn button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: orangered;
+}
+.log-register{
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    font-family: Arial;
+    color: white;
+}
+.log-register a{
+    margin-left: 5px;
+    text-decoration: none;
+    color: orangered;
+    transition: .3s ease;
+    font-weight: 600;
+}
+.log-register a:hover{
+    text-decoration: underline;
+}
+
+.logres-box .form-box.login{
+    transform: translateX(0px);
+    transition: .6s ease;
+    transition-delay: .5s;
+}
+.logres-box.active .form-box.login{
+    transform: translateX(400px);
+    transition-delay: 0s;
+}
+.logres-box .form-box.register{
+    transform: translateX(5%);
+    transition: transform .6s ease;
+}
+.logres-box.active .form-box.register{
+    transform: translateX(-400px);
+    transition-delay: .5s;
+}
+.register{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translateX(5%);
+}
+
+
+@media screen and (max-width: 780px) {
+    /*======= TEXT =======*/
+    .text{width: 75%;}
+    h2{font-size: 40px;}
+    h4{font-size: 25px;}
+
+    /*======= CLOSE BTN & REGISTRATION =======*/
+    .close-btn{top: 5%; left: 85%; font-size: 55px;}
+    .registration{top: 16%; width: 350px; height: 70%}
+
+    /*================ SIGN UP FORM =================*/
+
+   .logres-box{width: 400px;}
+   .logres-box .form-box{width: 350px;}
+   .form-box h1{font-size: 30px;}
+
+  .logres-box.active .form-box.register{transform: translateX(-350px);}
+}
